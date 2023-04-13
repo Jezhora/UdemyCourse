@@ -41,3 +41,40 @@ logger();
 
 const calc = (a, b) => a + b;
 const calc = (a, b) => {return a + b};
+
+
+//More about function
+
+const usdCurr = 28;
+const euroCurr = 59;
+const discount = 0.9;
+
+function convert (amount, curr) {
+    return curr * amount;
+}
+
+
+function promotion (result) {
+    console.log(result * discount);
+}
+
+const res = convert(500, usdCurr);
+
+promotion (res);
+
+
+function test () {
+    for (let i = 0; i < 5; i++){
+        console.log(i);
+        if (i === 3) {
+            return;
+        }
+    }
+    console.log('done')
+    //console.log('done') is not visible, because the return ended the function
+}
+test();
+
+
+function doNothing () {};
+console.log(doNothing() === undefined);
