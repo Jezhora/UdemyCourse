@@ -33,7 +33,6 @@ function rememberMyFilms () {
             i--;
         }     
     }
-    
 }
 rememberMyFilms();
 
@@ -58,6 +57,18 @@ function showMyDB (hidden) {
 }
 
 showMyDB(personalMovieDB.privat);
+
+// 3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+// "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+// genres
+
+function writeYourGenres () {
+    for(let i = 1; i <= 3; i++){
+        personalMovieDB.genres[i - 1] = prompt(`Your favorite genre number ${i}`);;
+    }
+}
+
+writeYourGenres();
 
 console.log(personalMovieDB)
 
