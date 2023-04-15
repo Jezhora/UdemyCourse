@@ -22,7 +22,25 @@ function calculateVolumeAndArea(h) {
 console.log(calculateVolumeAndArea(5));
 
 
+// Write a function that will determine the compartment number in the train by the seat number passed to it. The compartment has 4 seats.
+// The function only accepts an integer between 1 and 36.
+// If the passed argument is not a number, negative or fractional, a message is returned:
+// "Error. Please check that the seat number you entered is correct"
+// If the number is 0 or greater than 36, then the message: "There are no such seats in the car"
+// Example:
+// getCoupeNumber(33) => 9
+// getCoupeNumber(300) => "There are no such places in the train!"
+// getCoupeNumber(7.7) => "Error. Please check your seat number!"
 
-function getCoupeNumber() {
+function getCoupeNumber(n) {
+    if (typeof n !== 'number' || n < 0 || Number.isInteger(n) !== true ) {
+        return 'Error. Please check your seat number!'
+    } else if (n === 0 || n > 36) {
+        return 'There are no such places in the train!'
+    }
 
+    return Math.ceil(n / 4)
 }
+console.log(getCoupeNumber(37))
+
+
