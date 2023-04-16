@@ -1,16 +1,16 @@
-// Создайте функцию, которая принимает в себя целое число минут и 
-// возвращает время в нужном формате строки. 
-// (Смотри пример). Обратите внимание на окончание слова "час" - 
-// оно меняется в зависимости от цифры. 
-// Если вместо аргумента приходит не число, дробное или отрицательное число - 
-// функция возвращает строку "Ошибка, проверьте данные"
+// Create a function that takes an integer number of minutes and
+// returns the time in the desired string format.
+// (See example). 
+// Pay attention to the end of the word "hour" -it changes depending on the number.
+// If instead of the argument comes not a number, a fractional or negative number -
+// the function returns the string "Error, check the data"
 
-// Внимание! Давайте пока ограничимся максимум 600ю минутами (10 часов). 
-// Так как проверки на большие числа будут раздувать код (33 часа, 31 час, 11 часов и тд).
-//  Этого будет достаточно и код будет проверять именно этот промежуток (1 - 10 часов). 
-//  Но вы можете реализовать и полный скрипт, он тоже должен проходить тесты.
+// Attention! Let's limit ourselves to a maximum of 600 minutes (10 hours) for now.
+// Since checking for large numbers will bloat the code (33 hours, 31 hours, 11 hours, etc.).
+// This will be enough and the code will check exactly this interval (1 - 10 hours).
+// But you can also implement a complete script, it must also pass the tests.
 
-// Пример:
+// Example:
 
 // getTimeFromMinutes(150) => "Это 2 часа и 30 минут"
 
@@ -25,7 +25,7 @@ function getTimeFromMinutes(min) {
           minutes = min - (Math.floor(min / 60) *  60);
 
         if (min < 0 || typeof min !== 'number' || Number.isInteger(min) === false) {
-            return `Ошибка, проверьте данные`
+            return `Error, check the data`
         } else if (hour === 1) {
             return `Это ${hour} час и ${minutes} минут`
         } else if (hour > 1 && hour < 5 ) {
@@ -38,3 +38,20 @@ function getTimeFromMinutes(min) {
 console.log(getTimeFromMinutes(15))
 
 console.log(111 % 10)
+
+// Write a function that accepts 4 numbers
+// and returns the largest of them.
+// If one of the arguments is not a number
+// or less than 4 - returns 0.
+// Fractional numbers are allowed.
+
+function findMaxNumber(...args) {
+    
+    for(let i = 0; i < arguments.length; i++){
+        if (arguments.length < 4 || typeof arguments[i] === 'string') {
+            return 0
+        }  
+    }
+    return Math.max(...args)
+}
+console.log(findMaxNumber(1, 5, 15, 'g'))
