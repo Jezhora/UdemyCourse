@@ -24,7 +24,7 @@ function getTimeFromMinutes(min) {
     const hour = Math.floor(min / 60),
           minutes = min - (Math.floor(min / 60) *  60);
 
-        if (min < 0 || typeof min !== 'number' || Number.isInteger(min) === false) {
+        if (min < 0 || Number.isInteger(min) === false) {
             return `Error, check the data`
         } else if (hour === 1) {
             return `Это ${hour} час и ${minutes} минут`
@@ -35,7 +35,7 @@ function getTimeFromMinutes(min) {
         }    
 }
 
-console.log(getTimeFromMinutes(15))
+console.log(getTimeFromMinutes('15'))
 
 console.log(111 % 10)
 
