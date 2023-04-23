@@ -7,6 +7,11 @@
 // showExperience(personalPlanPeter) => '1 month'
 // P.S. it is desirable to use destructuring, but not required
 
+// Мне 29 и я владею языками: RU ENG'
+
+// const objName = obj.name
+// const objLang = obj.languages
+
 const personalPlanPeter = {
     name: "Peter",
     age: "29",
@@ -17,6 +22,15 @@ const personalPlanPeter = {
             php: '10%'
         },
         exp: '1 month'
+    },
+    showAgeAndLangs: function (obj) {
+        const objAge = obj.age
+        const objLang = obj.skills.languages
+        let resultLang = '';
+        for (let i = 0; i < objLang.length; i++) {
+            resultLang += `${objLang[i].toUpperCase()} `
+        }
+        return `Мне ${objAge} и я владею языками: ${resultLang}`
     }
 };
 
