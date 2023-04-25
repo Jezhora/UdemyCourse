@@ -15,8 +15,23 @@ function showFamily(arr) {
     return `Family consist of: ${family.join(' ')}`
 }
 
+// 2)write a standardizeStrings function 
+// that will take an array of strings
+// and print these strings to
+// the console in lower case.
+// Example:
+// standardizeStrings(favoriteCities) will print to the console
+// Lisbon
+// rome
+// milan
+// dublin
+
 const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
 function standardizeStrings(arr) {
-    
+    arr.forEach(function(item){
+        console.log(item.toLowerCase())
+    })
+   
 }
+standardizeStrings(favoriteCities);
