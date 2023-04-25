@@ -51,9 +51,9 @@ const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 function availableCurr(arr, missingCurr) {
     const currencies = [...arr];
-    let result = 'Доступные валюты:\n';
+    let result = 'Available currencies:\n';
     if (currencies.length === 0) {
-        return 'Нет доступных валют';
+        return 'No currencies available';
     } else {
         currencies.forEach(curr => {
             if (curr !== missingCurr) {
