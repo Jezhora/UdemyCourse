@@ -23,13 +23,23 @@ const personalPlanPeter = {
         },
         exp: '1 month'
     },
+    // showAgeAndLangs: function (obj) {
+    //     const objAge = obj.age
+    //     const objLang = obj.skills.languages
+    //     let resultLang = '';
+    //     for (let i = 0; i < objLang.length; i++) {
+    //         resultLang += `${objLang[i].toUpperCase()} `
+    //     }
+    //     return `Мне ${objAge} и я владею языками: ${resultLang}`
+    // }
     showAgeAndLangs: function (obj) {
         const objAge = obj.age
         const objLang = obj.skills.languages
         let resultLang = '';
-        for (let i = 0; i < objLang.length; i++) {
-            resultLang += `${objLang[i].toUpperCase()} `
-        }
+        objLang.forEach(function(item){
+            resultLang += `${item.toUpperCase()} `
+        })
+        
         return `Мне ${objAge} и я владею языками: ${resultLang}`
     }
 };
@@ -66,3 +76,13 @@ let answ = ''
 }
 
 console.log(showProgrammingLangs(personalPlanPeter));
+
+// 3) Create a showAgeAndLangs method inside the personalPlanPeter object. 
+// When it is called, the method will accept an object 
+// and return a string in the required form.
+// Example:
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter)
+// => 'I'm 29 and speak RU ENG'
+// Note that age and languages are automatically populated from the object,
+// and languages are always in upper case (in capital letters).
+// If the data in the object changes, then the message will also change.
