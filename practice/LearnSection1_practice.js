@@ -49,9 +49,30 @@ const personalMovieDB = {
         }
     },
     writeYourGenres: function () {
-        for(let i = 1; i <= 3; i++){
-            personalMovieDB.genres[i - 1] = prompt(`Your favorite genre number ${i}`);;
+        for (let i = 1; i < 2; i++) {
+            let genres = prompt(`Enter your favorite ganre by commas`).toLowerCase();
+            
+            if (genres === '' || genres == null) {
+                console.log("Your don't enter data or the data isn't correct");
+                i--;
+            } else {
+                personalMovieDB.genres = genres.split(',');
+                personalMovieDB.genres.sort();
+            }
         }
+        // for(let i = 1; i <= 3; i++) {
+        //     let genres = prompt(`Your favorite ganre number ${i}`)
+            
+        //     if (genres === '' || genres == null) {
+        //         console.log("Your don't enter data or the data isn't correct");
+        //         i--;
+        //     } else {
+        //         personalMovieDB.genres[i - 1] = genres;
+        //     }
+        // }
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`The favorite genre ${i + 1} is ${item}`)
+        });
     },
     toggleVisibleMyDB: function () {
         if (personalMovieDB.privat) {
