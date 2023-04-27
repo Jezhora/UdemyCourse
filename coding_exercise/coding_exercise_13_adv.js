@@ -30,9 +30,13 @@ function isBudgetEnough(data) {
     
     let shopsSquare = 0;
     
-    for (let i = 0; i < allShops.length; i++){
-        shopsSquare += allShops[i].width * allShops[i].length
-    }
+    // for (let i = 0; i < allShops.length; i++){
+    //     shopsSquare += allShops[i].width * allShops[i].length
+    // }
+
+    allShops.forEach(item => {
+        shopsSquare += item.width * item.length
+    })
     
     const shopsVolume = shopsSquare * mallHeight;
     const value = data.moneyPer1m3;
