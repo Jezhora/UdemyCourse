@@ -27,6 +27,17 @@
 
 // You need to solve the problem through recursion.
 
-function factorial() {
+function factorial(n) {
+    if (!Number.isInteger(n)) {
+        return 'Error'
+    } else if (n === 0 || n < 0) {
+        return 1;
+    } else if (n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n -1)
+    }
     
 }
+
+console.log(factorial(5))
