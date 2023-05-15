@@ -30,14 +30,18 @@
 function factorial(n) {
     if (!Number.isInteger(n)) {
         return 'Error'
-    } else if (n === 0 || n < 0) {
-        return 1;
-    } else if (n === 1) {
-        return 1;
-    } else {
-        return n * factorial(n -1)
-    }
+    } 
+    
+   if (n >= 1) {
+    return n * factorial(n-1)
+   } else {
+    return 1;
+   }
     
 }
 
-console.log(factorial(5))
+console.log(factorial(6))
+console.log(factorial(-4))
+console.log(factorial(0))
+console.log(factorial('www'))
+
