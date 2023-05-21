@@ -43,29 +43,30 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Timer
-    const deadLine = '2023-06-11';
 
-    function getTimeRemaining(endtime) {
-        const t = Date.parse(endtime) - Date.parse(new Date()),
-              days = Math.floor(t / (1000 * 60 * 60 *24)),
-              hours = Math.floor((t / (1000 * 60 * 60)) % 24),
-              minutes = Math.floor((t / (1000 * 60)) % 60),
-              seconds = Math.floor((t / 1000) % 60);
+    const deadLine = '2023-06-02';
+
+    function getTimeRemaining (endTime) {
+        const total = Date.parse(endTime) - Date.parse(new Date),
+              days = Math.floor(total / (1000 * 60 * 60 * 24)),
+              hours = Math.floor((total / (1000 * 60 * 60) % 24)),
+              minutes = Math.floor((total / (1000 * 60)) % 60),
+              seconds = Math.floor((total / 1000) % 60);
 
         return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
-        };      
-        
-    }
-    function getZero(num) {
+            total,
+            days,
+            hours,
+            minutes,
+            seconds
+        };
+    };
+
+    function getZero (num) {
         if (num >= 0 && num < 10) {
-            return `0${num}`;
+            return `0${num}`
         } else {
-            return num;
+            return num
         }
     }
 
@@ -75,11 +76,12 @@ window.addEventListener('DOMContentLoaded', () => {
               hours = timer.querySelector('#hours'),
               minutes = timer.querySelector('#minutes'),
               seconds = timer.querySelector('#seconds'),
-              timeInterval = setInterval(updateClock, 1000);
-        
-        updateClock();
-              
-        function updateClock() {
+              timeInterval = setInterval(clockUpdate, 1000);
+
+              clockUpdate();
+
+
+        function clockUpdate() {
             const t = getTimeRemaining(endTime);
 
             days.innerHTML = getZero(t.days);
@@ -88,10 +90,64 @@ window.addEventListener('DOMContentLoaded', () => {
             seconds.innerHTML = getZero(t.seconds);
 
             if (t.total <= 0) {
-                clearInterval(timeInterval)
-            }
-        };     
+                clearInterval(timeInterval);
+            };
+        }      
     }
 
-    setClock('.timer', deadLine);
+    setClock('.timer', deadLine)
+
+    // const deadLine = '2023-06-11';
+
+    // function getTimeRemaining(endtime) {
+    //     const t = Date.parse(endtime) - Date.parse(new Date()),
+    //           days = Math.floor(t / (1000 * 60 * 60 *24)),
+    //           hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+    //           minutes = Math.floor((t / (1000 * 60)) % 60),
+    //           seconds = Math.floor((t / 1000) % 60);
+
+    
+    //     return {
+    //         'total': t,
+    //         'days': days,
+    //         'hours': hours,
+    //         'minutes': minutes,
+    //         'seconds': seconds
+    //     };      
+        
+    // }
+
+    // function getZero(num) {
+    //     if (num >= 0 && num < 10) {
+    //         return `0${num}`;
+    //     } else {
+    //         return num;
+    //     }
+    // }
+
+    // function setClock(selector, endTime) {
+    //     const timer = document.querySelector(selector),
+    //           days = timer.querySelector('#days'),
+    //           hours = timer.querySelector('#hours'),
+    //           minutes = timer.querySelector('#minutes'),
+    //           seconds = timer.querySelector('#seconds'),
+    //           timeInterval = setInterval(updateClock, 1000);
+        
+    //     updateClock();
+              
+    //     function updateClock() {
+    //         const t = getTimeRemaining(endTime);
+
+    //         days.innerHTML = getZero(t.days);
+    //         hours.innerHTML = getZero(t.hours);
+    //         minutes.innerHTML = getZero(t.minutes);
+    //         seconds.innerHTML = getZero(t.seconds);
+
+    //         if (t.total <= 0) {
+    //             clearInterval(timeInterval)
+    //         }
+    //     };     
+    // }
+
+    // setClock('.timer', deadLine);
 });
