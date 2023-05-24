@@ -17,8 +17,8 @@
 // The numbers must be in the order of their column: B, I, N, G, O. Within the columns the order of the numbers is random.
 function getCard() {
     // Start your coding here...
-    let card = ['B', 'I', 'N', 'G', 'O'];
-    // let newCard = []
+  let bingo = ['B', 'I', 'N', 'G', 'O'];
+    let card = [];
     
 
 
@@ -29,17 +29,19 @@ function getCard() {
         return Math.floor(Math.random() * (max - min + 1) + 1)
     };
 
-    for (let i = 0; i < card.length; i++) {
+
+    for (let i = 0; i < bingo.length; i++) {
         let min = 1;
         let max = 15;
+            for (let j = 0; j < bingo.length; j++) {
+                // card += `${bingo[i]}${getRandomNumber(min, max)}`
+                card.push(bingo[i] + getRandomNumber(min, max))
+            }
         
-        card[i] = `${card[i]}${getRandomNumber(min, max)}`
-        min += max
-        max += max
+        min += 15
+        max += 15
     }
-    console.log(card)
-    
+    return card
 }
-
-
+console.log(getCard())
 
