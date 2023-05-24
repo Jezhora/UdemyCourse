@@ -18,12 +18,9 @@
 function getCard() {
     // Start your coding here...
     let bingo = ['B', 'I', 'N', 'G', 'O'];
-    
-  
     let uniqueNumber = [];
     let card = []
 
-       
     function getRandomNumber(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -31,32 +28,21 @@ function getCard() {
         if (uniqueNumber.includes(randomNumber)){
             return getRandomNumber(min, max)
         }
-        uniqueNumber.push(randomNumber)     
+        uniqueNumber.push(randomNumber)
+        return randomNumber;  
      };
-    
-     
-   
-    
-        for (let i = 0; i < 5; i++) {
-            getRandomNumber(1, 16)
-            card.push(bingo[0] + uniqueNumber[i]);
+        let min = 1,
+            max = 15;
+        for (let k = 0; k < 5; k++){
+           
+            for (let i = 0; i < 5; i++) {
+                if (k === 2 && i === 0) continue
+                card.push(bingo[k] + getRandomNumber(min, max));
+            }
+            min += 15;
+            max += 15;
         }
-        
-
-
-    console.log(uniqueNumber)
-    console.log(card)
-    
-    
-
-
-
-
-    
-
-
-    
-   
+    return card   
 }
 console.log(getCard())
 
