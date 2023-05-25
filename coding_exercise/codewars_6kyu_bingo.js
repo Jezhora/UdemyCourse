@@ -30,9 +30,11 @@ function getCard() {
         }
         uniqueNumber.push(randomNumber)
         return randomNumber;  
-     };
-        let min = 1,
-            max = 15;
+    };
+
+    let min = 1,
+        max = 15;
+    
         for (let k = 0; k < 5; k++){
            
             for (let i = 0; i < 5; i++) {
