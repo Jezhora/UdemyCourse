@@ -39,7 +39,11 @@ const whatTimeIsIt = function(angle) {
     
     if (hours < 10 && minutes < 10) {
         return `0${hours}:0${minutes}`   
-    }  else {
+    }  else if ( minutes < 10) {
+        return `${hours}:0${minutes}`   
+    } else if ( hours < 10) {
+        return `0${hours}:${minutes}`   
+    } else {
         return `${hours}:${minutes}`
     }
     
