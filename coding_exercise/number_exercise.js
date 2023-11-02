@@ -11,9 +11,9 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-  return width * height
+  return width * height;
 }
-console.log(getRectangleArea(5, 5))
+console.log(getRectangleArea(5, 5));
 
 /**
  * Returns a circumference of circle given by radius.
@@ -30,7 +30,7 @@ function getCircleCircumference(radius) {
   const TT = 3.14159265358979323846;
   return TT * (radius * 2);
 }
-console.log(getCircleCircumference(3.14))
+console.log(getCircleCircumference(3.14));
 
 /**
  * Returns an average of two given numbers.
@@ -45,9 +45,9 @@ console.log(getCircleCircumference(3.14))
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2
+  return (value1 + value2) / 2;
 }
-console.log(getAverage(-3, 3))
+console.log(getAverage(-3, 3));
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -65,9 +65,9 @@ console.log(getAverage(-3, 3))
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  return Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
+  return Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2));
 }
-console.log(getDistanceBetweenPoints(-5, 0, 10, -10))
+console.log(getDistanceBetweenPoints(-5, 0, 10, -10));
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -82,7 +82,7 @@ console.log(getDistanceBetweenPoints(-5, 0, 10, -10))
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  return -b / a
+  return -b / a;
 }
 
 
@@ -105,7 +105,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  return Math.abs((Math.atan(y2, x2) - Math.atan(y1, x1)) * 2)
+  return Math.abs((Math.atan(y2, x2) - Math.atan(y1, x1)) * 2);
 }
 
 
@@ -136,9 +136,10 @@ console.log(getLastDigit(123839))
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
+console.log(parseNumberFromString('-525.5'));
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
